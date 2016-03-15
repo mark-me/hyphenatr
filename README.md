@@ -1,3 +1,4 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 `hyphenatr` : HYPHENATE ALL THE THINGS
 
@@ -96,7 +97,7 @@ library(hyphenatr)
 library(testthat)
 
 date()
-#> [1] "Mon Mar 14 22:01:06 2016"
+#> [1] "Mon Mar 14 22:01:56 2016"
 
 test_dir("tests/")
 #> testthat results ========================================================================================================
