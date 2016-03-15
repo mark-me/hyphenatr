@@ -1,6 +1,6 @@
 Package: hyphenatr
 Title: Hyphenate All the Things
-Version: 0.0.0.9000
+Version: 0.1.0.9000
 Authors@R: c(person("Bob", "Rudis", email = "bob@rudis.net", role = c("aut", "cre")))
 Description: HYPHENATE ALL THE THINGS
 Depends:
@@ -9,5 +9,7 @@ License: AGPL + file LICENSE
 LazyData: true
 Suggests:
     testthat
+Imports:
+    stringi
 RoxygenNote: 5.0.1
 LinkingTo: Rcpp

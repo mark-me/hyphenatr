@@ -32,9 +32,7 @@ LogicalVector hyphendict_is_loaded() {
   return(dict != NULL);
 }
 
-//' Hyphenate a vector of words
-//'
-//' @export
+
 // [[Rcpp::export]]
 std::vector < std::string > hyphenate(std::vector < std::string > words) {
 
@@ -53,7 +51,7 @@ std::vector < std::string > hyphenate(std::vector < std::string > words) {
 
     if ((i % 10000) == 0) { Rcpp::checkUserInterrupt(); }
 
-    if (hnj_hyphen_hyphenate2(dict, words[i].c_str(), words[i].length(),
+    if (!hnj_hyphen_hyphenate2(dict, words[i].c_str(), words[i].length(),
                               hyphens, hyphenword, &rep, &pos, &cut)) {
       output[i] = std::string(hyphenword);
     } else {

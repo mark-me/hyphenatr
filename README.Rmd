@@ -17,17 +17,17 @@ knitr::opts_chunk$set(
 
 `hyphenatr` : HYPHENATE ALL THE THINGS
 
-extra dictionaries from <http://www.textcontrol.com/en_US/downloads/dictionaries/>
+At the moment, this requires <https://github.com/hunspell/hyphen> to  be installed on the local system first. Am working to get it to ship with the package.
 
-more docs coming, i just needed to get this into gh
+Support for extra hyphenation rules from <http://www.textcontrol.com/en_US/downloads/dictionaries/> coming soon.
 
 The following functions are implemented:
 
-The following data sets are included:
+- `hyphenate` : hyphenate a vector of words, returning either a vector with hyphens (or specified strings) or a list of hypenated word components.
 
 ### News
 
-- Version  released
+- Version 0.1.0.9000 released
 
 ### Installation
 
@@ -43,10 +43,25 @@ options(width=120)
 
 ```{r}
 library(hyphenatr)
+library(jsonlite)
 
 # current verison
 packageVersion("hyphenatr")
 
+dat <- readLines(system.file("extdata/top10000en.txt",
+                             package="hyphenatr"))
+
+out1 <- hyphenate(dat)
+out1[500:550]
+
+out2 <- hyphenate(dat, simplify=FALSE)
+jsonlite::toJSON(out2[530:540], pretty=TRUE)
+
+out3 <- hyphenate(dat, simplify="-")
+out3[500:550]
+
+out4 <- hyphenate(dat, simplify="&shy;")
+out4[500:550]
 ```
 
 ### Test Results

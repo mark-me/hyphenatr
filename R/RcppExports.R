@@ -14,9 +14,6 @@ hyphendict_is_loaded <- function() {
     .Call('hyphenatr_hyphendict_is_loaded', PACKAGE = 'hyphenatr')
 }
 
-#' Hyphenate a vector of words
-#'
-#' @export
 hyphenate <- function(words) {
     .Call('hyphenatr_hyphenate', PACKAGE = 'hyphenatr', words)
 }
