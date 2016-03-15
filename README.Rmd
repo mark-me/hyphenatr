@@ -42,23 +42,28 @@ options(width=120)
 ```{r}
 library(hyphenatr)
 library(jsonlite)
+library(microbenchmark)
 
 # current verison
 packageVersion("hyphenatr")
 
-dat <- readLines(system.file("extdata/top10000en.txt",
-                             package="hyphenatr"))
+# test word list (10K words)
+dat <- readLines(system.file("extdata/top10000en.txt", package="hyphenatr"))
 
-out1 <- hyphenate(dat)
+microbenchmark(out1 <- hyphenate(dat))
+
 out1[500:550]
 
-out2 <- hyphenate(dat, simplify=FALSE)
+microbenchmark(out2 <- hyphenate(dat, simplify=FALSE))
+
 jsonlite::toJSON(out2[530:540], pretty=TRUE)
 
-out3 <- hyphenate(dat, simplify="-")
+microbenchmark(out3 <- hyphenate(dat, simplify="-"))
+
 out3[500:550]
 
-out4 <- hyphenate(dat, simplify="&shy;")
+microbenchmark(out4 <- hyphenate(dat, simplify="&shy;"))
+
 out4[500:550]
 ```
 

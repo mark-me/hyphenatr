@@ -25,15 +25,20 @@ devtools::install_github("hrbrmstr/hyphenatr")
 ``` r
 library(hyphenatr)
 library(jsonlite)
+library(microbenchmark)
 
 # current verison
 packageVersion("hyphenatr")
 #> [1] '0.1.0.9000'
 
-dat <- readLines(system.file("extdata/top10000en.txt",
-                             package="hyphenatr"))
+# test word list (10K words)
+dat <- readLines(system.file("extdata/top10000en.txt", package="hyphenatr"))
 
-out1 <- hyphenate(dat)
+microbenchmark(out1 <- hyphenate(dat))
+#> Unit: milliseconds
+#>                    expr      min       lq     mean   median       uq      max neval
+#>  out1 <- hyphenate(dat) 20.77228 22.71703 23.83333 23.44692 24.64313 29.39743   100
+
 out1[500:550]
 #>  [1] "got"            "fam=ily"        "pol=icy"        "in=vestors"     "record"         "loss"          
 #>  [7] "re=ceived"      "April"          "Ex=change"      "code"           "graph=ics"      "agency"        
@@ -45,7 +50,11 @@ out1[500:550]
 #> [43] "agreed"         "though"         "Ja=pan"         "rather"         "coun=tries"     "plant"         
 #> [49] "along"          "Ap=ple"         "ac=tion"
 
-out2 <- hyphenate(dat, simplify=FALSE)
+microbenchmark(out2 <- hyphenate(dat, simplify=FALSE))
+#> Unit: milliseconds
+#>                                      expr      min       lq     mean  median       uq      max neval
+#>  out2 <- hyphenate(dat, simplify = FALSE) 27.55167 29.12468 30.16253 29.9709 30.79493 36.86456   100
+
 jsonlite::toJSON(out2[530:540], pretty=TRUE)
 #> [
 #>   ["econ", "omy"],
@@ -61,7 +70,11 @@ jsonlite::toJSON(out2[530:540], pretty=TRUE)
 #>   ["se", "cu", "rity"]
 #> ]
 
-out3 <- hyphenate(dat, simplify="-")
+microbenchmark(out3 <- hyphenate(dat, simplify="-"))
+#> Unit: milliseconds
+#>                                    expr      min       lq     mean   median       uq      max neval
+#>  out3 <- hyphenate(dat, simplify = "-") 26.89382 28.59585 29.86001 29.64129 30.75649 36.33019   100
+
 out3[500:550]
 #>  [1] "got"            "fam-ily"        "pol-icy"        "in-vestors"     "record"         "loss"          
 #>  [7] "re-ceived"      "April"          "Ex-change"      "code"           "graph-ics"      "agency"        
@@ -73,7 +86,11 @@ out3[500:550]
 #> [43] "agreed"         "though"         "Ja-pan"         "rather"         "coun-tries"     "plant"         
 #> [49] "along"          "Ap-ple"         "ac-tion"
 
-out4 <- hyphenate(dat, simplify="&shy;")
+microbenchmark(out4 <- hyphenate(dat, simplify="&shy;"))
+#> Unit: milliseconds
+#>                                        expr      min      lq     mean   median       uq    max neval
+#>  out4 <- hyphenate(dat, simplify = "&shy;") 28.76821 30.6767 31.76878 31.63226 32.87314 35.628   100
+
 out4[500:550]
 #>  [1] "got"                        "fam&shy;ily"                "pol&shy;icy"                "in&shy;vestors"            
 #>  [5] "record"                     "loss"                       "re&shy;ceived"              "April"                     
@@ -97,7 +114,7 @@ library(hyphenatr)
 library(testthat)
 
 date()
-#> [1] "Mon Mar 14 22:01:56 2016"
+#> [1] "Mon Mar 14 22:04:39 2016"
 
 test_dir("tests/")
 #> testthat results ========================================================================================================
