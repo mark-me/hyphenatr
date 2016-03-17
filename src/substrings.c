@@ -1,6 +1,7 @@
 //
 // A utility for finding substring embeddings in patterns
 
+#include <R.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -9,11 +10,11 @@
 
 //
 //
-static void die(
-  const char*msg
-) {
-  fprintf(stderr,"%s\n",msg);
-  exit(1);
+static void die(const char*msg) {
+  Rprintf("%s\n", msg);
+//  Rcout << msg << std::endl;
+//  fprintf(stderr,"%s\n",msg);
+//  exit(1);
 }
 
 
@@ -236,7 +237,7 @@ int main(int argc, const char* argv[]) {
           } else {
             free(newpat);
             newpattab_val[newpat_ndx] = combine(
-              newpattab_val[newpat_ndx], pattab_val[subpat_ndx] ); 
+              newpattab_val[newpat_ndx], pattab_val[subpat_ndx] );
           }
         }
       }

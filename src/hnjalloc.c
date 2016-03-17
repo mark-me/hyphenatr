@@ -16,8 +16,8 @@
  * Library General Public License for more details.
  *
  * You should have received a copy of the GNU Library General Public
- * License along with this library; if not, write to the 
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330, 
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
  * Boston, MA  02111-1307  USA.
 */
 
@@ -39,34 +39,18 @@
 #include <stdio.h>
 
 void *
-hnj_malloc (int size)
-{
+hnj_malloc (int size) {
   void *p;
-
   p = malloc (size);
-  if (p == NULL)
-    {
-      fprintf (stderr, "can't allocate %d bytes\n", size);
-      exit (1);
-    }
+  if (p == NULL) { return(NULL); }
   return p;
 }
 
-void *
-hnj_realloc (void *p, int size)
-{
+void *hnj_realloc (void *p, int size) {
   p = realloc (p, size);
-  if (p == NULL)
-    {
-      fprintf (stderr, "can't allocate %d bytes\n", size);
-      exit (1);
-    }
+  if (p == NULL) { return(NULL); }
   return p;
 }
 
-void
-hnj_free (void *p)
-{
-  free (p);
-}
+void hnj_free (void *p) { free (p); }
 

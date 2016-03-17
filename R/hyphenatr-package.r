@@ -1,4 +1,10 @@
-#' A package to HYPHENATE ALL THE THINGS
+#' Tools to Hyphenate Strings Using the 'Hunspell' Hyphenation Library
+#'
+#' Identifying hyphenation points in strings can be useful for both
+#' text processing and display functions. The 'Hunspell' hyphenation library
+#' provides tools to perform hyphenation using custom language rule dictionaries.
+#' Words can be hyphenated directly or split into hyphenated component strings
+#' for further processing.
 #'
 #' @name hyphenatr
 #' @docType package

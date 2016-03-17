@@ -1,6 +1,6 @@
 Package: hyphenatr
 Encoding: UTF-8
-Title: Hyphenate All the Things
+Title: Tools to Hyphenate Strings Using the 'Hunspell' Hyphenation Library
 Version: 0.2.0.9000
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rudis.net", role = c("aut", "cre")),
@@ -14,9 +14,13 @@ Authors@R: c(
     person("Nanning", "Buitenhuis", comment="libhnj substrings.c",
            role = c("aut", "cph"))
   )
-Description: HYPHENATE ALL THE THINGS
+Description: Identifying hyphenation points in strings can be useful for both
+    text processing and display functions. The 'Hunspell' hyphenation library
+    provides tools to perform hyphenation using custom language rule dictionaries.
+    Numerous hyphenation rules dictionaries are included. Words can be hyphenated
+    directly or split into hyphenated component strings for further processing.
 Depends:
-    R (>= 3.2.3)
+    R (>= 3.1.0)
 License: AGPL + file LICENSE
 LazyData: true
 Suggests:

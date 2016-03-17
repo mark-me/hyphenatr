@@ -4,9 +4,13 @@
 \name{hyphenatr}
 \alias{hyphenatr}
 \alias{hyphenatr-package}
-\title{A package to HYPHENATE ALL THE THINGS}
+\title{Tools to Hyphenate Strings Using the 'Hunspell' Hyphenation Library}
 \description{
-A package to HYPHENATE ALL THE THINGS
+Identifying hyphenation points in strings can be useful for both
+text processing and display functions. The 'Hunspell' hyphenation library
+provides tools to perform hyphenation using custom language rule dictionaries.
+Words can be hyphenated directly or split into hyphenated component strings
+for further processing.
 }
 \author{
 Bob Rudis (@hrbrmstr)
