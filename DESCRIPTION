@@ -1,7 +1,7 @@
 Package: hyphenatr
 Encoding: UTF-8
 Title: Tools to Hyphenate Strings Using the 'Hunspell' Hyphenation Library
-Version: 0.2.0.9000
+Version: 0.3.0.9000
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rudis.net", role = c("aut", "cre")),
     person("Raph", "Levien", comment="original libhnj", role = c("aut", "cph")),
@@ -16,13 +16,15 @@ Authors@R: c(
   )
 Description: Identifying hyphenation points in strings can be useful for both
     text processing and display functions. The 'Hunspell' hyphenation library
-    provides tools to perform hyphenation using custom language rule dictionaries.
-    Numerous hyphenation rules dictionaries are included. Words can be hyphenated
-    directly or split into hyphenated component strings for further processing.
+    <https://github.com/hunspell/hyphen> provides tools to perform hyphenation
+    using custom language rule dictionaries. Numerous hyphenation rules
+    dictionaries are included. Words can be hyphenated directly or split into
+    hyphenated component strings for further processing.
 Depends:
     R (>= 3.1.0)
 NeedsCompilation: yes
-License: AGPL + file LICENSE
+Copyright: file inst/COPYRIGHTS
+License: GPL-3 + file LICENSE
 LazyData: true
 Suggests:
     testthat

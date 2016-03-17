@@ -1,11 +1,14 @@
 #' Switch hyphen rules language
 #'
-#' See \code{References} for the list. For valid values, use
-#' \code{list_dicts()}.
+#' See \code{References} for the source of the hyphenation rules. For valid
+#' values, use \code{list_dicts()}.
 #'
 #' @param lang hyphen rules language
-#' @references \url{http://www.textcontrol.com/en_US/downloads/dictionaries/}
+#' @references \url{https://github.com/LibreOffice/dictionaries}
 #' @export
+#' @note The \code{en_US} hyphenation rules dictionary is loaded by default
+#' @examples
+#' switch_dict("hu_HU")
 switch_dict <- function(lang) {
   lang <- match.arg(lang, list_dicts())
   .pkgenv$curr_lang <- lang
@@ -18,11 +21,21 @@ switch_dict <- function(lang) {
 #' Identify current hyphen rules language
 #'
 #' @export
+#' @examples
+#' curr_dict()
 curr_dict <- function() { .pkgenv$curr_lang }
 
 #' List available hyphenation languages rules
 #'
+#' The vast majority \href{https://github.com/LibreOffice/dictionaries}{OpenOffice Hunspell hyphenation rules dictionaries}
+#' are named in the format \code{location.code_COUNTRY.CODE} (e.g. \code{en_US}).
+#' This function returns the list of available dictionaries. Used the desired, supplied
+#' result in your call to \code{\link{switch_dict}}.
+#'
 #' @export
+#' @note The \code{en_US} hyphenation rules dictionary is loaded by default
+#' @examples
+#' list_dicts()
 list_dicts <- function() {
 
   sort(gsub("(^hyph_|\\.dic$)", "",
@@ -46,6 +59,7 @@ list_dicts <- function() {
 #' @return a character vector or a list depending on the value of
 #'         \code{simplify}.
 #' @export
+#' @note The \code{en_US} hyphenation rules dictionary is loaded by default
 #' @examples
 #' dat <- readLines(system.file("extdata/top10000en.txt", package="hyphenatr"))
 #'

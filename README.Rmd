@@ -15,6 +15,8 @@ knitr::opts_chunk$set(
 
 `hyphenatr` : HY-PHEN-ATE ALL THE THINGS
 
+Based on the [Hunspell hyphenation library](https://github.com/hunspell/hyphen) and includes hyphenation rules dictionaries from [LibreOffice](https://github.com/LibreOffice/dictionaries). See the <inst/COPYRIGHTS> file for individual copyright information.
+
 The following functions are implemented:
 
 - `curr_dict`:	Identify current hyphen rules language
@@ -24,6 +26,7 @@ The following functions are implemented:
 
 ### News
 
+- Version 0.3.0.9000 - Copyrights & more hyphenation rules added
 - Version 0.2.1.9000 - CRAN checks passed
 - Version 0.2.0.9000 - no external library required
 - Version 0.1.0.9000 released

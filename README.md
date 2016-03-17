@@ -2,6 +2,8 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 `hyphenatr` : HY-PHEN-ATE ALL THE THINGS
 
+Based on the [Hunspell hyphenation library](https://github.com/hunspell/hyphen) and includes hyphenation rules dictionaries from [LibreOffice](https://github.com/LibreOffice/dictionaries). See the &lt;inst/COPYRIGHTS&gt; file for individual copyright information.
+
 The following functions are implemented:
 
 -   `curr_dict`: Identify current hyphen rules language
@@ -11,6 +13,7 @@ The following functions are implemented:
 
 ### News
 
+-   Version 0.3.0.9000 - Copyrights & more hyphenation rules added
 -   Version 0.2.1.9000 - CRAN checks passed
 -   Version 0.2.0.9000 - no external library required
 -   Version 0.1.0.9000 released
@@ -30,12 +33,13 @@ library(microbenchmark)
 
 # current verison
 packageVersion("hyphenatr")
-#> [1] '0.2.0.9000'
+#> [1] '0.3.0.9000'
 
 list_dicts()
-#>  [1] "af_ZA"  "bg_BG"  "ca"     "cs_CZ"  "da_DK"  "de"     "el_GR"  "en_GB"  "en_US"  "es_ANY" "et_EE"  "fr"    
-#> [13] "hr_HR"  "it_IT"  "lt_LT"  "nb_NO"  "nl_NL"  "nn_NO"  "pl_PL"  "pt_BR"  "pt_PT"  "ro_RO"  "ru_RU"  "sh"    
-#> [25] "sk_SK"  "sl_SI"  "sr"     "uk_UA"
+#>  [1] "af_ZA"  "bg_BG"  "ca"     "cs_CZ"  "da_DK"  "de"     "de_AT"  "de_CH"  "de_DE"  "el_GR"  "en_GB"  "en_US" 
+#> [13] "es_ANY" "et_EE"  "fr"     "gl"     "hr_HR"  "hu_HU"  "is"     "it_IT"  "lt"     "lt_LT"  "lv_LV"  "nb_NO" 
+#> [25] "nl_NL"  "nn_NO"  "pl_PL"  "pt_BR"  "pt_PT"  "ro_RO"  "ru_RU"  "sh"     "sk_SK"  "sl_SI"  "sr"     "sv"    
+#> [37] "te_IN"  "uk_UA"  "zu_ZA"
 
 curr_dict()
 #> [1] "en_US"
@@ -45,8 +49,8 @@ dat <- readLines(system.file("extdata/top10000en.txt", package="hyphenatr"))
 
 microbenchmark(out1 <- hyphenate(dat))
 #> Unit: milliseconds
-#>                    expr      min       lq     mean   median      uq      max neval
-#>  out1 <- hyphenate(dat) 21.23842 22.54925 23.67097 23.52425 24.6573 27.10211   100
+#>                    expr     min       lq     mean   median       uq      max neval
+#>  out1 <- hyphenate(dat) 22.4749 23.69464 24.55828 24.49432 25.44034 27.39061   100
 
 out1[500:550]
 #>  [1] "got"            "fam=ily"        "pol=icy"        "in=vestors"     "record"         "loss"          
@@ -62,7 +66,7 @@ out1[500:550]
 microbenchmark(out2 <- hyphenate(dat, simplify=FALSE))
 #> Unit: milliseconds
 #>                                      expr      min       lq     mean   median       uq      max neval
-#>  out2 <- hyphenate(dat, simplify = FALSE) 26.43927 28.42775 29.72091 29.62071 30.64459 37.50795   100
+#>  out2 <- hyphenate(dat, simplify = FALSE) 28.82166 30.56872 31.31672 31.24576 31.98454 34.75559   100
 
 jsonlite::toJSON(out2[530:540], pretty=TRUE)
 #> [
@@ -82,7 +86,7 @@ jsonlite::toJSON(out2[530:540], pretty=TRUE)
 microbenchmark(out3 <- hyphenate(dat, simplify="-"))
 #> Unit: milliseconds
 #>                                    expr      min       lq     mean   median       uq      max neval
-#>  out3 <- hyphenate(dat, simplify = "-") 26.76238 27.99861 29.52921 29.46679 30.55398 39.47939   100
+#>  out3 <- hyphenate(dat, simplify = "-") 29.52682 30.48318 31.36062 31.44932 32.07846 34.88409   100
 
 out3[500:550]
 #>  [1] "got"            "fam-ily"        "pol-icy"        "in-vestors"     "record"         "loss"          
@@ -97,8 +101,8 @@ out3[500:550]
 
 microbenchmark(out4 <- hyphenate(dat, simplify="&shy;"))
 #> Unit: milliseconds
-#>                                        expr     min       lq     mean  median       uq      max neval
-#>  out4 <- hyphenate(dat, simplify = "&shy;") 28.0976 29.45027 30.63636 30.5069 31.81903 34.87187   100
+#>                                        expr      min       lq     mean   median       uq      max neval
+#>  out4 <- hyphenate(dat, simplify = "&shy;") 30.21961 32.03736 33.00942 33.18922 33.94994 35.81902   100
 
 out4[500:550]
 #>  [1] "got"                        "fam&shy;ily"                "pol&shy;icy"                "in&shy;vestors"            
@@ -123,11 +127,11 @@ library(hyphenatr)
 library(testthat)
 
 date()
-#> [1] "Thu Mar 17 00:24:11 2016"
+#> [1] "Thu Mar 17 12:36:45 2016"
 
 test_dir("tests/")
 #> testthat results ========================================================================================================
-#> OK: 1 SKIPPED: 0 FAILED: 0
+#> OK: 4 SKIPPED: 0 FAILED: 0
 ```
 
 ### Code of Conduct

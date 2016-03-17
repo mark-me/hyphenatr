@@ -24,6 +24,9 @@ Given a character vector (one word per element), this function
 will hyphenate the strings or return a list of separated
 hyphenated string components.
 }
+\note{
+The \code{en_US} hyphenation rules dictionary is loaded by default
+}
 \examples{
 dat <- readLines(system.file("extdata/top10000en.txt", package="hyphenatr"))
 

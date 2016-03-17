@@ -10,10 +10,16 @@ switch_dict(lang)
 \item{lang}{hyphen rules language}
 }
 \description{
-See \code{References} for the list. For valid values, use
-\code{list_dicts()}.
+See \code{References} for the source of the hyphenation rules. For valid
+values, use \code{list_dicts()}.
+}
+\note{
+The \code{en_US} hyphenation rules dictionary is loaded by default
+}
+\examples{
+switch_dict("hu_HU")
 }
 \references{
-\url{http://www.textcontrol.com/en_US/downloads/dictionaries/}
+\url{https://github.com/LibreOffice/dictionaries}
 }
 

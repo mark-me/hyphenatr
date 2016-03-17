@@ -7,6 +7,15 @@
 list_dicts()
 }
 \description{
-List available hyphenation languages rules
+The vast majority \href{https://github.com/LibreOffice/dictionaries}{OpenOffice Hunspell hyphenation rules dictionaries}
+are named in the format \code{location.code_COUNTRY.CODE} (e.g. \code{en_US}).
+This function returns the list of available dictionaries. Used the desired, supplied
+result in your call to \code{\link{switch_dict}}.
+}
+\note{
+The \code{en_US} hyphenation rules dictionary is loaded by default
+}
+\examples{
+list_dicts()
 }
 

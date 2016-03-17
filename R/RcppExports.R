@@ -12,6 +12,7 @@ cleanup <- function() {
 #' Test to see if the hyphenation language rules dictionary is loaded
 #'
 #' @export
+#' @note The \code{en_US} hyphenation rules dictionary is loaded by default
 hyphendict_is_loaded <- function() {
     .Call('hyphenatr_hyphendict_is_loaded', PACKAGE = 'hyphenatr')
 }

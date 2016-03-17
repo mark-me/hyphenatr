@@ -1,0 +1,157 @@
+Overall license:
+================
+   The (vast) majority of the hyphenation dictionares included in this package
+   are released under the GPL or LGPL.
+
+   The aggregation, integration and packaging work is released under the
+   GPL (>= 3) with the added provision that the package as a whole is
+   licensed under the GPL (>= 3).
+
+Details:
+========
+
+Files: *
+Copyright: 2016  Bob Rudis
+License: GPL (>= 3)
+
+File: inst/extdata/top10000en.txt
+Copyright: 1998-2016 University of Leipzig
+License: MIT
+
+File: hnhjalloc.[ch], hyphen.[ch], substrings.csource files comprising libhnj
+Copyright: 1998 Raph Levien; 2001 ALTLinux, Moscow
+License: GPL (>= 2) / LGPL (>= 2) / MPL (>= 1)
+
+File: inst/extdata/dicts/hyph_af_ZA.dic:
+File: inst/extdata/dicts/hyph_zu_ZA.dic:
+Nieuwoudt words: Copyright (C) 1993, 2003 Bernard A Nieuwoudt
+Viljoen words: Copyright (C) 1998 Danie Viljoen
+License: GPL (>= 2)
+
+File: inst/extdata/dicts/hyph_bg_BG.dic:
+Copyright: 2000 Anton Zinoviev <anton@lml.bas.bg>
+License: GPL (>= 2)
+
+File: inst/extdata/dicts/hyph_ca.dic:
+Copyright: 2013-2015 Jaume Ortolà <jaumeortola@gmail.com>
+License: GPL (>= 3)
+
+File: inst/extdata/dicts/hyph_cs_CZ.dic:
+Copyright: 2003 Pavel@Janik.cz (Pavel Janík)
+License: GPL (>= 1)
+
+File: inst/extdata/dicts/hyph_da_DK.dic:
+Copyright: 1998 Frank Jensen (fj@iesd.auc.dk)
+License: LGPL (>= 2)
+
+File: inst/extdata/dicts/hyph_de.dic:
+File: inst/extdata/dicts/hyph_de_AT.dic:
+File: inst/extdata/dicts/hyph_de_CH.dic:
+File: inst/extdata/dicts/hyph_de_DE.dic:
+Copyright: 2015 Marco Huggenberger <marco@by-night.ch>
+License: LGPL (>= 2)
+
+File: inst/extdata/dicts/hyph_el_GR.dic:
+Copyright: 2015 InterZone <info@interzone.gr>
+License: LGPL (>= 2)
+
+File: inst/extdata/dicts/hyph_en_GB.dic:
+File: inst/extdata/dicts/hyph_en_US.dic:
+Copyright: 2011 László Németh (nemeth at OOo)
+License: LGPL (>= 2)
+
+File: inst/extdata/dicts/hyph_es_ANY.dic:
+Copyright: 2015 sbosio <en> openoffice <punto> org
+License: GPL (>= 3)
+
+File: inst/extdata/dicts/hyph_et_EE.dic:
+Copyright: 2004 Jaak Pruulmann (jjpp@meso.ee)
+License: LGPL (>= 1)
+
+File: inst/extdata/dicts/hyph_fr.dic:
+Copyright: 2002 Marc Lodewijck <mlodewijck@gmail.com>
+License: LGPL (>= 2)
+
+File: inst/extdata/dicts/hyph_gl.dic:
+Copyright: 2015 Creado por Frco. Javier Rial Rodríguez (fjrial@mancomun.org)
+License: GPL (>= 2)
+
+File: inst/extdata/dicts/hyph_hr_HR.dic:
+Copyright: 1998 Marinović Igor <migor at student.math.hr>
+License: LGPL (>= 1)
+
+File: inst/extdata/dicts/hyph_hu_HU.dic:
+Copyright: 2011 Nagy Bence <nagybence (at) tipogral (dot) hu>
+License: MPL/GPL/LGPL
+
+File: inst/extdata/dicts/hyph_is.dic:
+Copyright: 2015 Árni Magnússon Institute for Icelandic Studies
+License: CC BY 4.0
+
+File: inst/extdata/dicts/hyph_it_IT.dic:
+Copyright: 2015 Giuseppe Bilotta <giuseppe.bilotta@gmail.com>
+License: LGPL (>= 2)
+
+File: inst/extdata/dicts/hyph_lt.dic:
+File: inst/extdata/dicts/hyph_lt_IT.dic:
+File: inst/extdata/dicts/hyph_lt_LT.dic:
+Copyright: 1998 Albertas Agejevas <alga@akl.lt>
+License: LaTeX Project Public Licence
+
+File: inst/extdata/dicts/hyph_lv_LV.dic:
+Copyright: 2004-2005 Jânis Vilims, jvilims@apollo.lv
+License: GPL (>= 2)
+
+File: inst/extdata/dicts/hyph_nb_NO.dic:
+File: inst/extdata/dicts/hyph_nn_NO.dic:
+Copyright: 2008 The spell-norwegian project
+License: GPL (>= 2)
+
+File: inst/extdata/dicts/hyph_nl_NL.dic:
+Copyright: 2001-2005 Simon Brouwer
+License: CC BY 3.0
+
+File: inst/extdata/dicts/hyph_pl_PL.dic:
+Copyright: 1995 Artur Polaczyński <artiip@gmail.com>
+License: LGPL (>= 1)
+
+File: inst/extdata/dicts/hyph_pt_BR.dic:
+Copyright: 2008-2013 Raimundo Santos Moura <raimundo.smoura@gmail.com>
+License: LGPL (>= 3)
+
+File: inst/extdata/dicts/hyph_pt_PT.dic:
+Copyright: 1998 Paulo Morgado <paulo.morgado@vizzavi.pt>
+License: GPL (>= 2)
+
+File: inst/extdata/dicts/hyph_ro_RO.dic:
+Copyright: 1998 Adrian Stoica (office@cuvinte.ro)
+License: GPL (>= 2)
+
+File: inst/extdata/dicts/hyph_ru_RU.dic:
+Copyright: 1997-2008 Alexander I. Lebedev
+License: GPL (>= 2)
+
+File: inst/extdata/dicts/hyph_sh.dic:
+File: inst/extdata/dicts/hyph_sk_SK.dic:
+Copyright: 2011 Jana Chlebíková
+License: LGPL (>= 2)
+
+File: inst/extdata/dicts/hyph_sl_SI.dic:
+Copyright: 2011 Martin Srebotnjak, <miles@filmsi.net>
+License: LGPL (>= 2)
+
+File: inst/extdata/dicts/hyph_sr.dic:
+Copyright: 2008 Dejan Muhamedagić
+License: LGPL (>= 2)
+
+File: inst/extdata/dicts/hyph_sv_SE.dic:
+Copyright: 2013 Niklas Johansson <sleeping.pillow@gmail.com>
+License: LGPL (>= 3)
+
+File: inst/extdata/dicts/hyph_te_IN.dic:
+Copyright: 2009 Santhosh Thottingal
+License: LGPL (>= 2)
+
+File: inst/extdata/dicts/hyph_uk_UA.dic:
+Copyright: 1998-2002 Maksym Polyakov
+License: GPL (>= 2)

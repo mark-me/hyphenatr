@@ -6,6 +6,11 @@
 #' Words can be hyphenated directly or split into hyphenated component strings
 #' for further processing.
 #'
+#' Based on the \href{https://github.com/hunspell/hyphen}{Hunspell hyphenation library}
+#' and includes hyphenation rules dictionaries from
+#' \href{https://github.com/LibreOffice/dictionaries}{LibreOffice}.
+#'
+#' @note The \code{en_US} hyphenation rules dictionary is loaded by default
 #' @name hyphenatr
 #' @docType package
 #' @author Bob Rudis (@@hrbrmstr)

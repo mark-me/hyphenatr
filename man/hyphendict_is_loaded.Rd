@@ -9,4 +9,7 @@ hyphendict_is_loaded()
 \description{
 Test to see if the hyphenation language rules dictionary is loaded
 }
+\note{
+The \code{en_US} hyphenation rules dictionary is loaded by default
+}
 

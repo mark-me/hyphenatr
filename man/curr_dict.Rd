@@ -9,4 +9,7 @@ curr_dict()
 \description{
 Identify current hyphen rules language
 }
+\examples{
+curr_dict()
+}
 
