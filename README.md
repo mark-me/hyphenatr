@@ -8,7 +8,10 @@ Support for extra hyphenation rules from <http://www.textcontrol.com/en_US/downl
 
 The following functions are implemented:
 
--   `hyphenate` : hyphenate a vector of words, returning either a vector with hyphens (or specified strings) or a list of hypenated word components.
+-   `curr_dict`: Identify current hyphen rules language
+-   `hyphenate`: Hyphenate a character vector of words
+-   `list_dicts`: List available hyphenation languages rules
+-   `switch_dict`: Switch hyphen rules language
 
 ### News
 
@@ -31,13 +34,21 @@ library(microbenchmark)
 packageVersion("hyphenatr")
 #> [1] '0.1.0.9000'
 
+list_dicts()
+#>  [1] "af_ZA"  "bg_BG"  "ca"     "cs_CZ"  "da_DK"  "de"     "el_GR"  "en_GB"  "en_US"  "es_ANY" "et_EE"  "fr"    
+#> [13] "hr_HR"  "it_IT"  "lt_LT"  "nb_NO"  "nl_NL"  "nn_NO"  "pl_PL"  "pt_BR"  "pt_PT"  "ro_RO"  "ru_RU"  "sh"    
+#> [25] "sk_SK"  "sl_SI"  "sr"     "uk_UA"
+
+curr_dict()
+#> [1] "en_US"
+
 # test word list (10K words)
 dat <- readLines(system.file("extdata/top10000en.txt", package="hyphenatr"))
 
 microbenchmark(out1 <- hyphenate(dat))
 #> Unit: milliseconds
-#>                    expr      min       lq     mean   median       uq      max neval
-#>  out1 <- hyphenate(dat) 20.77228 22.71703 23.83333 23.44692 24.64313 29.39743   100
+#>                    expr    min       lq     mean   median       uq      max neval
+#>  out1 <- hyphenate(dat) 21.084 22.46623 23.75113 23.76099 24.98613 27.44503   100
 
 out1[500:550]
 #>  [1] "got"            "fam=ily"        "pol=icy"        "in=vestors"     "record"         "loss"          
@@ -52,8 +63,8 @@ out1[500:550]
 
 microbenchmark(out2 <- hyphenate(dat, simplify=FALSE))
 #> Unit: milliseconds
-#>                                      expr      min       lq     mean  median       uq      max neval
-#>  out2 <- hyphenate(dat, simplify = FALSE) 27.55167 29.12468 30.16253 29.9709 30.79493 36.86456   100
+#>                                      expr    min       lq     mean   median       uq     max neval
+#>  out2 <- hyphenate(dat, simplify = FALSE) 26.244 28.34472 29.85532 29.76182 31.35217 35.7828   100
 
 jsonlite::toJSON(out2[530:540], pretty=TRUE)
 #> [
@@ -72,8 +83,8 @@ jsonlite::toJSON(out2[530:540], pretty=TRUE)
 
 microbenchmark(out3 <- hyphenate(dat, simplify="-"))
 #> Unit: milliseconds
-#>                                    expr      min       lq     mean   median       uq      max neval
-#>  out3 <- hyphenate(dat, simplify = "-") 26.89382 28.59585 29.86001 29.64129 30.75649 36.33019   100
+#>                                    expr      min       lq   mean   median       uq      max neval
+#>  out3 <- hyphenate(dat, simplify = "-") 26.53168 28.38128 29.848 29.67211 31.11331 33.99726   100
 
 out3[500:550]
 #>  [1] "got"            "fam-ily"        "pol-icy"        "in-vestors"     "record"         "loss"          
@@ -88,8 +99,8 @@ out3[500:550]
 
 microbenchmark(out4 <- hyphenate(dat, simplify="&shy;"))
 #> Unit: milliseconds
-#>                                        expr      min      lq     mean   median       uq    max neval
-#>  out4 <- hyphenate(dat, simplify = "&shy;") 28.76821 30.6767 31.76878 31.63226 32.87314 35.628   100
+#>                                        expr      min       lq     mean  median       uq      max neval
+#>  out4 <- hyphenate(dat, simplify = "&shy;") 28.67563 30.22896 31.43619 31.1238 32.90817 35.23374   100
 
 out4[500:550]
 #>  [1] "got"                        "fam&shy;ily"                "pol&shy;icy"                "in&shy;vestors"            
@@ -114,7 +125,7 @@ library(hyphenatr)
 library(testthat)
 
 date()
-#> [1] "Mon Mar 14 22:04:39 2016"
+#> [1] "Wed Mar 16 23:06:43 2016"
 
 test_dir("tests/")
 #> testthat results ========================================================================================================

@@ -2,11 +2,11 @@
 % Please edit documentation in R/hyphen.r
 \name{list_dicts}
 \alias{list_dicts}
-\title{List available hyphenation dictionaries}
+\title{List available hyphenation languages rules}
 \usage{
 list_dicts()
 }
 \description{
-List available hyphenation dictionaries
+List available hyphenation languages rules
 }
 

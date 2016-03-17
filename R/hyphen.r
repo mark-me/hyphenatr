@@ -1,19 +1,34 @@
+#' Switch hyphen rules language
+#'
+#' See \code{References} for the list. For valid values, use
+#' \code{list_dicts()}.
+#'
+#' @references \url{http://www.textcontrol.com/en_US/downloads/dictionaries/}
 #' @export
-switch_dict <- function(code) {
-
+switch_dict <- function(lang) {
+  lang <- match.arg(lang, list_dicts())
+  .pkgenv$curr_lang <- lang
+  if (interactive()) message(sprintf("Switching hyphenation rules to '%s'", lang))
+  invisible(.Call('hyphenatr_init', PACKAGE='hyphenatr',
+                  system.file(sprintf("extdata/dicts/hyph_%s.dic", lang),
+                              package="hyphenatr")))
 }
 
-#' List available hyphenation dictionaries
+#' Identify current hyphen rules language
+#'
+#' @export
+curr_dict <- function() { .pkgenv$curr_lang }
+
+#' List available hyphenation languages rules
 #'
 #' @export
 list_dicts <- function() {
 
-  sort(gsub("(^.*_|\\.dic$)", "",
+  sort(gsub("(^hyph_|\\.dic$)", "",
             list.files(system.file("extdata/dicts",
                                    package="hyphenatr"))))
 
 }
-
 
 #' Hyphenate a character vector of words
 #'

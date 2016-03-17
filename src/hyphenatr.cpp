@@ -12,7 +12,7 @@ using namespace std;
 
 HyphenDict *dict = NULL;
 
-// get number of packets in capture
+// Set dictionary language
 //
 // @param dict_path path to the hyphen dictionary
 // [[Rcpp::export]]
@@ -31,7 +31,6 @@ void cleanup() {
 LogicalVector hyphendict_is_loaded() {
   return(dict != NULL);
 }
-
 
 // [[Rcpp::export]]
 std::vector < std::string > hyphenate(std::vector < std::string > words) {

@@ -21,7 +21,10 @@ Support for extra hyphenation rules from <http://www.textcontrol.com/en_US/downl
 
 The following functions are implemented:
 
-- `hyphenate` : hyphenate a vector of words, returning either a vector with hyphens (or specified strings) or a list of hypenated word components.
+- `curr_dict`:	Identify current hyphen rules language
+- `hyphenate`:	Hyphenate a character vector of words
+- `list_dicts`:	List available hyphenation languages rules
+- `switch_dict`:	Switch hyphen rules language
 
 ### News
 
@@ -46,6 +49,10 @@ library(microbenchmark)
 
 # current verison
 packageVersion("hyphenatr")
+
+list_dicts()
+
+curr_dict()
 
 # test word list (10K words)
 dat <- readLines(system.file("extdata/top10000en.txt", package="hyphenatr"))
