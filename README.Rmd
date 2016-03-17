@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-`hyphenatr` : HYPHENATE ALL THE THINGS
+`hyphenatr` : HY-PHEN-ATE ALL THE THINGS
 
 The following functions are implemented:
 
@@ -24,6 +24,7 @@ The following functions are implemented:
 
 ### News
 
+- Version 0.2.1.9000 - CRAN checks passed
 - Version 0.2.0.9000 - no external library required
 - Version 0.1.0.9000 released
 

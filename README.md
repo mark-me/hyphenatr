@@ -1,6 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-`hyphenatr` : HYPHENATE ALL THE THINGS
+`hyphenatr` : HY-PHEN-ATE ALL THE THINGS
 
 The following functions are implemented:
 
@@ -11,6 +11,7 @@ The following functions are implemented:
 
 ### News
 
+-   Version 0.2.1.9000 - CRAN checks passed
 -   Version 0.2.0.9000 - no external library required
 -   Version 0.1.0.9000 released
 
@@ -44,8 +45,8 @@ dat <- readLines(system.file("extdata/top10000en.txt", package="hyphenatr"))
 
 microbenchmark(out1 <- hyphenate(dat))
 #> Unit: milliseconds
-#>                    expr      min       lq     mean   median       uq      max neval
-#>  out1 <- hyphenate(dat) 20.60129 21.76488 23.34045 23.16855 24.66982 28.32694   100
+#>                    expr      min       lq     mean   median      uq      max neval
+#>  out1 <- hyphenate(dat) 21.23842 22.54925 23.67097 23.52425 24.6573 27.10211   100
 
 out1[500:550]
 #>  [1] "got"            "fam=ily"        "pol=icy"        "in=vestors"     "record"         "loss"          
@@ -60,8 +61,8 @@ out1[500:550]
 
 microbenchmark(out2 <- hyphenate(dat, simplify=FALSE))
 #> Unit: milliseconds
-#>                                      expr      min       lq     mean   median       uq     max neval
-#>  out2 <- hyphenate(dat, simplify = FALSE) 26.90225 28.79702 30.20364 30.16404 31.23261 36.7191   100
+#>                                      expr      min       lq     mean   median       uq      max neval
+#>  out2 <- hyphenate(dat, simplify = FALSE) 26.43927 28.42775 29.72091 29.62071 30.64459 37.50795   100
 
 jsonlite::toJSON(out2[530:540], pretty=TRUE)
 #> [
@@ -81,7 +82,7 @@ jsonlite::toJSON(out2[530:540], pretty=TRUE)
 microbenchmark(out3 <- hyphenate(dat, simplify="-"))
 #> Unit: milliseconds
 #>                                    expr      min       lq     mean   median       uq      max neval
-#>  out3 <- hyphenate(dat, simplify = "-") 26.66264 28.41522 29.53422 29.41618 30.73699 34.23482   100
+#>  out3 <- hyphenate(dat, simplify = "-") 26.76238 27.99861 29.52921 29.46679 30.55398 39.47939   100
 
 out3[500:550]
 #>  [1] "got"            "fam-ily"        "pol-icy"        "in-vestors"     "record"         "loss"          
@@ -96,8 +97,8 @@ out3[500:550]
 
 microbenchmark(out4 <- hyphenate(dat, simplify="&shy;"))
 #> Unit: milliseconds
-#>                                        expr      min       lq     mean   median       uq     max neval
-#>  out4 <- hyphenate(dat, simplify = "&shy;") 28.83835 31.25626 32.52042 32.43939 33.59321 36.1052   100
+#>                                        expr     min       lq     mean  median       uq      max neval
+#>  out4 <- hyphenate(dat, simplify = "&shy;") 28.0976 29.45027 30.63636 30.5069 31.81903 34.87187   100
 
 out4[500:550]
 #>  [1] "got"                        "fam&shy;ily"                "pol&shy;icy"                "in&shy;vestors"            
@@ -122,7 +123,7 @@ library(hyphenatr)
 library(testthat)
 
 date()
-#> [1] "Wed Mar 16 23:28:57 2016"
+#> [1] "Thu Mar 17 00:24:11 2016"
 
 test_dir("tests/")
 #> testthat results ========================================================================================================
