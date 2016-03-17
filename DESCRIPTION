@@ -21,6 +21,7 @@ Description: Identifying hyphenation points in strings can be useful for both
     directly or split into hyphenated component strings for further processing.
 Depends:
     R (>= 3.1.0)
+NeedsCompilation: yes
 License: AGPL + file LICENSE
 LazyData: true
 Suggests:
