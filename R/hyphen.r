@@ -3,6 +3,7 @@
 #' See \code{References} for the list. For valid values, use
 #' \code{list_dicts()}.
 #'
+#' @param lang hyphen rules language
 #' @references \url{http://www.textcontrol.com/en_US/downloads/dictionaries/}
 #' @export
 switch_dict <- function(lang) {

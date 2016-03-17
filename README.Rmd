@@ -15,10 +15,6 @@ knitr::opts_chunk$set(
 
 `hyphenatr` : HYPHENATE ALL THE THINGS
 
-At the moment, this requires <https://github.com/hunspell/hyphen> to  be installed on the local system first. Am working to get it to ship with the package.
-
-Support for extra hyphenation rules from <http://www.textcontrol.com/en_US/downloads/dictionaries/> coming soon.
-
 The following functions are implemented:
 
 - `curr_dict`:	Identify current hyphen rules language
@@ -28,6 +24,7 @@ The following functions are implemented:
 
 ### News
 
+- Version 0.2.0.9000 - no external library required
 - Version 0.1.0.9000 released
 
 ### Installation

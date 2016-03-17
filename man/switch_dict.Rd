@@ -6,6 +6,9 @@
 \usage{
 switch_dict(lang)
 }
+\arguments{
+\item{lang}{hyphen rules language}
+}
 \description{
 See \code{References} for the list. For valid values, use
 \code{list_dicts()}.

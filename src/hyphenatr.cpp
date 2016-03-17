@@ -26,6 +26,8 @@ void cleanup() {
   if (dict != NULL) hnj_hyphen_free(dict);
 }
 
+//' Test to see if the hyphenation language rules dictionary is loaded
+//'
 //' @export
 // [[Rcpp::export]]
 LogicalVector hyphendict_is_loaded() {

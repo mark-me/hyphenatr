@@ -1,7 +1,19 @@
 Package: hyphenatr
+Encoding: UTF-8
 Title: Hyphenate All the Things
-Version: 0.1.0.9000
-Authors@R: c(person("Bob", "Rudis", email = "bob@rudis.net", role = c("aut", "cre")))
+Version: 0.2.0.9000
+Authors@R: c(
+    person("Bob", "Rudis", email = "bob@rudis.net", role = c("aut", "cre")),
+    person("Raph", "Levien", comment="original libhnj", role = c("aut", "cph")),
+    person("Rene", "Engelhard", comment="libhnj maintainer", role = c("aut", "cph")),
+    person("Chris", "Halls", comment="libhnj maintainer", role = c("aut", "cph")),
+    person("Peter", "Novodvorsky", comment="libhnj OOo integration",
+           role = c("aut", "cph")),
+    person("László", "Németh", role = c("aut", "cph"),
+           comment="libhnj non-standard and compound hyphenation with Unicode support"),
+    person("Nanning", "Buitenhuis", comment="libhnj substrings.c",
+           role = c("aut", "cph"))
+  )
 Description: HYPHENATE ALL THE THINGS
 Depends:
     R (>= 3.2.3)
@@ -10,6 +22,7 @@ LazyData: true
 Suggests:
     testthat
 Imports:
+    Rcpp,
     stringi
 RoxygenNote: 5.0.1
 LinkingTo: Rcpp

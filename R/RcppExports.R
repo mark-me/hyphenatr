@@ -9,6 +9,8 @@ cleanup <- function() {
     invisible(.Call('hyphenatr_cleanup', PACKAGE = 'hyphenatr'))
 }
 
+#' Test to see if the hyphenation language rules dictionary is loaded
+#'
 #' @export
 hyphendict_is_loaded <- function() {
     .Call('hyphenatr_hyphendict_is_loaded', PACKAGE = 'hyphenatr')
