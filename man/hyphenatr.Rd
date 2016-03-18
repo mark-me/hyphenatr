@@ -16,6 +16,8 @@ for further processing.
 Based on the \href{https://github.com/hunspell/hyphen}{Hunspell hyphenation library}
 and includes hyphenation rules dictionaries from
 \href{https://github.com/LibreOffice/dictionaries}{LibreOffice}.
+
+Special thanks to Edwin de Jonge & Gergely Daróczi for language testing.
 }
 \note{
 The \code{en_US} hyphenation rules dictionary is loaded by default

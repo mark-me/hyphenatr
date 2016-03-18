@@ -10,6 +10,8 @@
 #' and includes hyphenation rules dictionaries from
 #' \href{https://github.com/LibreOffice/dictionaries}{LibreOffice}.
 #'
+#' Special thanks to Edwin de Jonge & Gergely Daróczi for language testing.
+#'
 #' @note The \code{en_US} hyphenation rules dictionary is loaded by default
 #' @name hyphenatr
 #' @docType package

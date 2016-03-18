@@ -24,6 +24,10 @@ The following functions are implemented:
 - `list_dicts`:	List available hyphenation languages rules
 - `switch_dict`:	Switch hyphen rules language
 
+### Special thanks to
+
+- @daroczig & @edwindj for language testing.
+
 ### News
 
 - Version 0.3.0.9000 - Copyrights & more hyphenation rules added
@@ -73,6 +77,10 @@ out3[500:550]
 microbenchmark(out4 <- hyphenate(dat, simplify="&shy;"))
 
 out4[500:550]
+
+switch_dict("de_DE")
+
+hyphenate("tägelîch")
 ```
 
 ### Test Results
@@ -82,6 +90,8 @@ library(hyphenatr)
 library(testthat)
 
 date()
+
+switch_dict("en_US")
 
 test_dir("tests/")
 ```

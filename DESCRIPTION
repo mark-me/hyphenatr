@@ -1,7 +1,7 @@
 Package: hyphenatr
 Encoding: UTF-8
 Title: Tools to Hyphenate Strings Using the 'Hunspell' Hyphenation Library
-Version: 0.3.0.9000
+Version: 0.3.0
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rudis.net", role = c("aut", "cre")),
     person("Raph", "Levien", comment="original libhnj", role = c("aut", "cph")),
@@ -12,12 +12,14 @@ Authors@R: c(
     person("László", "Németh", role = c("aut", "cph"),
            comment="libhnj non-standard and compound hyphenation with Unicode support"),
     person("Nanning", "Buitenhuis", comment="libhnj substrings.c",
-           role = c("aut", "cph"))
+           role = c("aut", "cph")),
+    person("Edwin", "de Jonge", role="ctb", comment="Language testing"),
+    person("Gergely", "Daróczi", role="ctb", comment="Language testing")
   )
 Description: Identifying hyphenation points in strings can be useful for both
     text processing and display functions. The 'Hunspell' hyphenation library
     <https://github.com/hunspell/hyphen> provides tools to perform hyphenation
-    using custom language rule dictionaries. Numerous hyphenation rules
+    using custom language rule dictionaries. Many hyphenation rules
     dictionaries are included. Words can be hyphenated directly or split into
     hyphenated component strings for further processing.
 Depends:
