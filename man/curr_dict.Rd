@@ -12,4 +12,3 @@ Identify current hyphen rules language
 \examples{
 curr_dict()
 }
-

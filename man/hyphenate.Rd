@@ -35,4 +35,3 @@ out2 <- hyphenate(dat, simplify=FALSE)
 out3 <- hyphenate(dat, simplify="-")
 out4 <- hyphenate(dat, simplify="&shy;")
 }
-

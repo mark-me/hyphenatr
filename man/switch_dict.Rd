@@ -22,4 +22,3 @@ switch_dict("hu_HU")
 \references{
 \url{https://github.com/LibreOffice/dictionaries}
 }
-

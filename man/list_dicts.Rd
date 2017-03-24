@@ -18,4 +18,3 @@ The \code{en_US} hyphenation rules dictionary is loaded by default
 \examples{
 list_dicts()
 }
-
