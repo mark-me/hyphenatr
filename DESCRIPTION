@@ -4,7 +4,7 @@ Title: Tools to Hyphenate Strings Using the 'Hunspell' Hyphenation Library
 Version: 0.4.0
 Date: 2018-09-16
 Authors@R: c(
-    person("Bob", "Rudis", email = "bob@rudis.net", role = c("aut", "cre")),
+    person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre")),
     person("Raph", "Levien", comment="original libhnj", role = c("aut", "cph")),
     person("Rene", "Engelhard", comment="libhnj maintainer", role = c("aut", "cph")),
     person("Chris", "Halls", comment="libhnj maintainer", role = c("aut", "cph")),
