@@ -15,12 +15,12 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
-// cleanup_int
-void cleanup_int();
-RcppExport SEXP _hyphenatr_cleanup_int() {
+// cleanup
+void cleanup();
+RcppExport SEXP _hyphenatr_cleanup() {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
-    cleanup_int();
+    cleanup();
     return R_NilValue;
 END_RCPP
 }
@@ -48,7 +48,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_hyphenatr_init", (DL_FUNC) &_hyphenatr_init, 1},
-    {"_hyphenatr_cleanup_int", (DL_FUNC) &_hyphenatr_cleanup_int, 0},
+    {"_hyphenatr_cleanup", (DL_FUNC) &_hyphenatr_cleanup, 0},
     {"_hyphenatr_hyphendict_is_loaded", (DL_FUNC) &_hyphenatr_hyphendict_is_loaded, 0},
     {"_hyphenatr_hyphenate", (DL_FUNC) &_hyphenatr_hyphenate, 1},
     {NULL, NULL, 0}

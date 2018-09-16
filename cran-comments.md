@@ -12,3 +12,13 @@
 ----
 
 Fixes CRAN check errors on the erroring platforms and adds C code registration.
+
+As per the communication for the initial version, the hypenation dictionaries
+are included to make it easy on users vs have to deal with getting permission
+from them to make a directory and add an interface to download the dictionaries
+on-demand.
+
+Also updated/added the following dictionaries:
+
+- bg, ca, de, de, de, es, fr, id, pt, ro
+

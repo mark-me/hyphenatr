@@ -7,6 +7,6 @@
 }
 
 .onUnload <- function (libpath) {
-  invisible(.Call('_hyphenatr_cleanup_int', PACKAGE = 'hyphenatr'))
+  invisible(.Call('_hyphenatr_cleanup', PACKAGE = 'hyphenatr'))
   library.dynam.unload("hyphenatr", libpath)
 }

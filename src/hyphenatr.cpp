@@ -21,8 +21,12 @@ void init(std::string dict_path) {
   dict = hnj_hyphen_load(dict_path.c_str());
 }
 
+//' Cleanup after ourselves
+//'
+//' @keywords internal
+//' @export
 // [[Rcpp::export]]
-void cleanup_int() {
+void cleanup() {
   if (dict != NULL) hnj_hyphen_free(dict);
 }
 

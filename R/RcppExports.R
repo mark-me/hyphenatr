@@ -5,8 +5,12 @@ init <- function(dict_path) {
     invisible(.Call('_hyphenatr_init', PACKAGE = 'hyphenatr', dict_path))
 }
 
-cleanup_int <- function() {
-    invisible(.Call('_hyphenatr_cleanup_int', PACKAGE = 'hyphenatr'))
+#' Cleanup after ourselves
+#'
+#' @keywords internal
+#' @export
+cleanup <- function() {
+    invisible(.Call('_hyphenatr_cleanup', PACKAGE = 'hyphenatr'))
 }
 
 #' Test to see if the hyphenation language rules dictionary is loaded
