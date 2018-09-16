@@ -28,13 +28,6 @@ The following functions are implemented:
 
 - @daroczig & @edwindj for language testing.
 
-### News
-
-- Version 0.3.0.9000 - Copyrights & more hyphenation rules added
-- Version 0.2.1.9000 - CRAN checks passed
-- Version 0.2.0.9000 - no external library required
-- Version 0.1.0.9000 released
-
 ### Installation
 
 ```{r eval=FALSE}

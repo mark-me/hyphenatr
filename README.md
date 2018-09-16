@@ -1,26 +1,24 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
 `hyphenatr` : HY-PHEN-ATE ALL THE THINGS
 
-Based on the [Hunspell hyphenation library](https://github.com/hunspell/hyphen) and includes hyphenation rules dictionaries from [LibreOffice](https://github.com/LibreOffice/dictionaries). See the &lt;inst/COPYRIGHTS&gt; file for individual copyright information.
+Based on the [Hunspell hyphenation
+library](https://github.com/hunspell/hyphen) and includes hyphenation
+rules dictionaries from
+[LibreOffice](https://github.com/LibreOffice/dictionaries). See the
+<inst/COPYRIGHTS> file for individual copyright information.
 
 The following functions are implemented:
 
--   `curr_dict`: Identify current hyphen rules language
--   `hyphenate`: Hyphenate a character vector of words
--   `list_dicts`: List available hyphenation languages rules
--   `switch_dict`: Switch hyphen rules language
+  - `curr_dict`: Identify current hyphen rules language
+  - `hyphenate`: Hyphenate a character vector of words
+  - `list_dicts`: List available hyphenation languages rules
+  - `switch_dict`: Switch hyphen rules language
 
 ### Special thanks to
 
--   @daroczig & @edwindj for language testing.
-
-### News
-
--   Version 0.3.0.9000 - Copyrights & more hyphenation rules added
--   Version 0.2.1.9000 - CRAN checks passed
--   Version 0.2.0.9000 - no external library required
--   Version 0.1.0.9000 released
+  - @daroczig & @edwindj for language testing.
 
 ### Installation
 
@@ -37,13 +35,13 @@ library(microbenchmark)
 
 # current verison
 packageVersion("hyphenatr")
-#> [1] '0.3.0.9000'
+#> [1] '0.4.0'
 
 list_dicts()
 #>  [1] "af_ZA"  "bg_BG"  "ca"     "cs_CZ"  "da_DK"  "de"     "de_AT"  "de_CH"  "de_DE"  "el_GR"  "en_GB"  "en_US" 
-#> [13] "es_ANY" "et_EE"  "fr"     "gl"     "hr_HR"  "hu_HU"  "is"     "it_IT"  "lt"     "lt_LT"  "lv_LV"  "nb_NO" 
-#> [25] "nl_NL"  "nn_NO"  "pl_PL"  "pt_BR"  "pt_PT"  "ro_RO"  "ru_RU"  "sh"     "sk_SK"  "sl_SI"  "sr"     "sv"    
-#> [37] "te_IN"  "uk_UA"  "zu_ZA"
+#> [13] "es_ANY" "et_EE"  "fr"     "gl"     "hr_HR"  "hu_HU"  "id_ID"  "is"     "it_IT"  "lt"     "lt_LT"  "lv_LV" 
+#> [25] "nb_NO"  "nl_NL"  "nn_NO"  "pl_PL"  "pt_BR"  "pt_PT"  "ro_RO"  "ru_RU"  "sh"     "sk_SK"  "sl_SI"  "sr"    
+#> [37] "sv"     "te_IN"  "uk_UA"  "zu_ZA"
 
 curr_dict()
 #> [1] "en_US"
@@ -54,7 +52,7 @@ dat <- readLines(system.file("extdata/top10000en.txt", package="hyphenatr"))
 microbenchmark(out1 <- hyphenate(dat))
 #> Unit: milliseconds
 #>                    expr      min       lq     mean   median       uq      max neval
-#>  out1 <- hyphenate(dat) 20.77134 22.16768 23.70809 23.65906 24.73395 30.21601   100
+#>  out1 <- hyphenate(dat) 21.94578 23.32256 23.56536 23.56452 23.90368 25.19756   100
 
 out1[500:550]
 #>  [1] "got"            "fam=ily"        "pol=icy"        "in=vestors"     "record"         "loss"          
@@ -70,7 +68,7 @@ out1[500:550]
 microbenchmark(out2 <- hyphenate(dat, simplify=FALSE))
 #> Unit: milliseconds
 #>                                      expr      min       lq     mean   median       uq      max neval
-#>  out2 <- hyphenate(dat, simplify = FALSE) 26.32844 28.27894 29.26569 29.13235 29.80986 33.21204   100
+#>  out2 <- hyphenate(dat, simplify = FALSE) 26.25778 28.81523 30.13128 29.80596 31.39706 34.70954   100
 
 jsonlite::toJSON(out2[530:540], pretty=TRUE)
 #> [
@@ -89,8 +87,8 @@ jsonlite::toJSON(out2[530:540], pretty=TRUE)
 
 microbenchmark(out3 <- hyphenate(dat, simplify="-"))
 #> Unit: milliseconds
-#>                                    expr      min       lq     mean  median       uq     max neval
-#>  out3 <- hyphenate(dat, simplify = "-") 26.22136 28.04543 29.82251 30.0245 31.20909 36.4886   100
+#>                                    expr      min       lq     mean   median       uq      max neval
+#>  out3 <- hyphenate(dat, simplify = "-") 27.18512 27.93358 28.59602 28.82985 29.08455 30.21765   100
 
 out3[500:550]
 #>  [1] "got"            "fam-ily"        "pol-icy"        "in-vestors"     "record"         "loss"          
@@ -105,8 +103,8 @@ out3[500:550]
 
 microbenchmark(out4 <- hyphenate(dat, simplify="&shy;"))
 #> Unit: milliseconds
-#>                                        expr      min       lq    mean   median       uq      max neval
-#>  out4 <- hyphenate(dat, simplify = "&shy;") 28.57537 29.78537 31.6346 31.31182 33.16067 37.89471   100
+#>                                        expr      min       lq     mean   median       uq      max neval
+#>  out4 <- hyphenate(dat, simplify = "&shy;") 26.70818 29.10536 29.60883 29.75772 30.38419 30.77399   100
 
 out4[500:550]
 #>  [1] "got"                        "fam&shy;ily"                "pol&shy;icy"                "in&shy;vestors"            
@@ -136,15 +134,28 @@ library(hyphenatr)
 library(testthat)
 
 date()
-#> [1] "Thu Mar 17 20:15:06 2016"
+#> [1] "Sun Sep 16 15:40:17 2018"
 
 switch_dict("en_US")
 
 test_dir("tests/")
-#> testthat results ========================================================================================================
+#> ✔ | OK F W S | Context
+#> ══ testthat results  ═════════════════════════════════════════════════════════════════════════════════════════
 #> OK: 5 SKIPPED: 0 FAILED: 0
+#> 
+#> ══ Results ═══════════════════════════════════════════════════════════════════════════════════════════════════
+#> Duration: 1.6 s
+#> 
+#> OK:       0
+#> Failed:   0
+#> Warnings: 0
+#> Skipped:  0
+#> 
+#> :)
 ```
 
 ### Code of Conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of
+Conduct](CONDUCT.md). By participating in this project you agree to
+abide by its terms.
