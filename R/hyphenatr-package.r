@@ -16,7 +16,7 @@
 #' @name hyphenatr
 #' @docType package
 #' @author Bob Rudis (@@hrbrmstr)
-#' @useDynLib hyphenatr, .registration=TRUE
+#' @useDynLib hyphenatr
 #' @importFrom Rcpp sourceCpp
 #' @importFrom stringi stri_split_regex stri_replace_all_regex
 NULL

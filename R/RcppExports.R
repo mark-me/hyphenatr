@@ -2,11 +2,11 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 init <- function(dict_path) {
-    invisible(.Call('hyphenatr_init', PACKAGE = 'hyphenatr', dict_path))
+    invisible(.Call('_hyphenatr_init', PACKAGE = 'hyphenatr', dict_path))
 }
 
-cleanup <- function() {
-    invisible(.Call('hyphenatr_cleanup', PACKAGE = 'hyphenatr'))
+cleanup_int <- function() {
+    invisible(.Call('_hyphenatr_cleanup_int', PACKAGE = 'hyphenatr'))
 }
 
 #' Test to see if the hyphenation language rules dictionary is loaded
@@ -14,10 +14,10 @@ cleanup <- function() {
 #' @export
 #' @note The \code{en_US} hyphenation rules dictionary is loaded by default
 hyphendict_is_loaded <- function() {
-    .Call('hyphenatr_hyphendict_is_loaded', PACKAGE = 'hyphenatr')
+    .Call('_hyphenatr_hyphendict_is_loaded', PACKAGE = 'hyphenatr')
 }
 
 hyphenate <- function(words) {
-    .Call('hyphenatr_hyphenate', PACKAGE = 'hyphenatr', words)
+    .Call('_hyphenatr_hyphenate', PACKAGE = 'hyphenatr', words)
 }
 

@@ -22,7 +22,7 @@ void init(std::string dict_path) {
 }
 
 // [[Rcpp::export]]
-void cleanup() {
+void cleanup_int() {
   if (dict != NULL) hnj_hyphen_free(dict);
 }
 

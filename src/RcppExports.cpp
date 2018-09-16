@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // init
 void init(std::string dict_path);
-RcppExport SEXP hyphenatr_init(SEXP dict_pathSEXP) {
+RcppExport SEXP _hyphenatr_init(SEXP dict_pathSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::string >::type dict_path(dict_pathSEXP);
@@ -15,18 +15,18 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
-// cleanup
-void cleanup();
-RcppExport SEXP hyphenatr_cleanup() {
+// cleanup_int
+void cleanup_int();
+RcppExport SEXP _hyphenatr_cleanup_int() {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
-    cleanup();
+    cleanup_int();
     return R_NilValue;
 END_RCPP
 }
 // hyphendict_is_loaded
 LogicalVector hyphendict_is_loaded();
-RcppExport SEXP hyphenatr_hyphendict_is_loaded() {
+RcppExport SEXP _hyphenatr_hyphendict_is_loaded() {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -36,7 +36,7 @@ END_RCPP
 }
 // hyphenate
 std::vector < std::string > hyphenate(std::vector < std::string > words);
-RcppExport SEXP hyphenatr_hyphenate(SEXP wordsSEXP) {
+RcppExport SEXP _hyphenatr_hyphenate(SEXP wordsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -44,4 +44,17 @@ BEGIN_RCPP
     rcpp_result_gen = Rcpp::wrap(hyphenate(words));
     return rcpp_result_gen;
 END_RCPP
+}
+
+static const R_CallMethodDef CallEntries[] = {
+    {"_hyphenatr_init", (DL_FUNC) &_hyphenatr_init, 1},
+    {"_hyphenatr_cleanup_int", (DL_FUNC) &_hyphenatr_cleanup_int, 0},
+    {"_hyphenatr_hyphendict_is_loaded", (DL_FUNC) &_hyphenatr_hyphendict_is_loaded, 0},
+    {"_hyphenatr_hyphenate", (DL_FUNC) &_hyphenatr_hyphenate, 1},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_hyphenatr(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
 }

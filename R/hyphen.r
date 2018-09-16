@@ -13,7 +13,7 @@ switch_dict <- function(lang) {
   lang <- match.arg(lang, list_dicts())
   .pkgenv$curr_lang <- lang
   if (interactive()) message(sprintf("Switching hyphenation rules to '%s'", lang))
-  invisible(.Call('hyphenatr_init', PACKAGE='hyphenatr',
+  invisible(.Call('_hyphenatr_init', PACKAGE='hyphenatr',
                   system.file(sprintf("extdata/dicts/hyph_%s.dic", lang),
                               package="hyphenatr")))
 }
@@ -69,7 +69,7 @@ list_dicts <- function() {
 #' out4 <- hyphenate(dat, simplify="&shy;")
 hyphenate <- function(words, simplify=TRUE) {
 
-  out <- .Call('hyphenatr_hyphenate', words, PACKAGE = 'hyphenatr')
+  out <- .Call('_hyphenatr_hyphenate', words, PACKAGE = 'hyphenatr')
 
   if (inherits(simplify, "logical")) {
     if (!simplify) {
