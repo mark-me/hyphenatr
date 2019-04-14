@@ -1,8 +1,8 @@
 Package: hyphenatr
 Encoding: UTF-8
 Title: Tools to Hyphenate Strings Using the 'Hunspell' Hyphenation Library
-Version: 0.4.0
-Date: 2018-09-16
+Version: 0.4.1
+Date: 2019-04-14
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre")),
     person("Raph", "Levien", comment="original libhnj", role = c("aut", "cph")),
@@ -17,6 +17,7 @@ Authors@R: c(
     person("Edwin", "de Jonge", role="ctb", comment="Language testing"),
     person("Gergely", "Daróczi", role="ctb", comment="Language testing")
   )
+Maintainer: Bob Rudis <bob@rud.is>
 Description: Identifying hyphenation points in strings can be useful for both
     text processing and display functions. The 'Hunspell' hyphenation library
     <https://github.com/hunspell/hyphen> provides tools to perform hyphenation
@@ -34,5 +35,5 @@ Suggests:
 Imports:
     Rcpp,
     stringi
-RoxygenNote: 6.0.1.9000
+RoxygenNote: 6.1.1
 LinkingTo: Rcpp
