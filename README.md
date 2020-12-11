@@ -35,7 +35,7 @@ library(microbenchmark)
 
 # current verison
 packageVersion("hyphenatr")
-#> [1] '0.4.0'
+#> [1] '0.4.2'
 
 list_dicts()
 #>  [1] "af_ZA"  "bg_BG"  "ca"     "cs_CZ"  "da_DK"  "de"     "de_AT"  "de_CH"  "de_DE"  "el_GR"  "en_GB"  "en_US" 
@@ -52,7 +52,7 @@ dat <- readLines(system.file("extdata/top10000en.txt", package="hyphenatr"))
 microbenchmark(out1 <- hyphenate(dat))
 #> Unit: milliseconds
 #>                    expr      min       lq     mean   median       uq      max neval
-#>  out1 <- hyphenate(dat) 21.94578 23.32256 23.56536 23.56452 23.90368 25.19756   100
+#>  out1 <- hyphenate(dat) 25.79321 27.80007 29.10339 28.68965 30.22017 37.46743   100
 
 out1[500:550]
 #>  [1] "got"            "fam=ily"        "pol=icy"        "in=vestors"     "record"         "loss"          
@@ -68,7 +68,7 @@ out1[500:550]
 microbenchmark(out2 <- hyphenate(dat, simplify=FALSE))
 #> Unit: milliseconds
 #>                                      expr      min       lq     mean   median       uq      max neval
-#>  out2 <- hyphenate(dat, simplify = FALSE) 26.25778 28.81523 30.13128 29.80596 31.39706 34.70954   100
+#>  out2 <- hyphenate(dat, simplify = FALSE) 37.32594 38.97343 41.20213 40.32986 42.62161 51.69166   100
 
 jsonlite::toJSON(out2[530:540], pretty=TRUE)
 #> [
@@ -88,7 +88,7 @@ jsonlite::toJSON(out2[530:540], pretty=TRUE)
 microbenchmark(out3 <- hyphenate(dat, simplify="-"))
 #> Unit: milliseconds
 #>                                    expr      min       lq     mean   median       uq      max neval
-#>  out3 <- hyphenate(dat, simplify = "-") 27.18512 27.93358 28.59602 28.82985 29.08455 30.21765   100
+#>  out3 <- hyphenate(dat, simplify = "-") 38.76724 42.34603 49.87003 48.23965 55.32755 73.66214   100
 
 out3[500:550]
 #>  [1] "got"            "fam-ily"        "pol-icy"        "in-vestors"     "record"         "loss"          
@@ -104,7 +104,7 @@ out3[500:550]
 microbenchmark(out4 <- hyphenate(dat, simplify="&shy;"))
 #> Unit: milliseconds
 #>                                        expr      min       lq     mean   median       uq      max neval
-#>  out4 <- hyphenate(dat, simplify = "&shy;") 26.70818 29.10536 29.60883 29.75772 30.38419 30.77399   100
+#>  out4 <- hyphenate(dat, simplify = "&shy;") 45.29019 48.68628 50.84506 50.06046 51.78429 63.37514   100
 
 out4[500:550]
 #>  [1] "got"                        "fam&shy;ily"                "pol&shy;icy"                "in&shy;vestors"            
@@ -134,24 +134,19 @@ library(hyphenatr)
 library(testthat)
 
 date()
-#> [1] "Sun Sep 16 15:40:17 2018"
+#> [1] "Fri Dec 11 10:31:25 2020"
 
 switch_dict("en_US")
 
 test_dir("tests/")
-#> ✔ | OK F W S | Context
-#> ══ testthat results  ═════════════════════════════════════════════════════════════════════════════════════════
-#> OK: 5 SKIPPED: 0 FAILED: 0
+#> ✓ |  OK F W S | Context
+#> ⠏ |   0       | testthat                                                                                                
+#> ══ Results ═════════════════════════════════════════════════════════════════════════════════════════════════════════════
+#> Duration: 0.4 s
 #> 
-#> ══ Results ═══════════════════════════════════════════════════════════════════════════════════════════════════
-#> Duration: 1.6 s
+#> [ FAIL 0 | WARN 0 | SKIP 0 | PASS 0 ]
 #> 
-#> OK:       0
-#> Failed:   0
-#> Warnings: 0
-#> Skipped:  0
-#> 
-#> :)
+#> 🐝 Your tests are the bees knees 🐝
 ```
 
 ### Code of Conduct
