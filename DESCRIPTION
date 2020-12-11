@@ -35,5 +35,5 @@ Suggests:
 Imports:
     Rcpp,
     stringi
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 LinkingTo: Rcpp
